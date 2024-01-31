@@ -103,10 +103,12 @@
       */
 
       const changePcontent = function () {
-      const p= document.querySelectorAll("div p")
-      for (let i=0; i<p.length; i++)
-      p[i].innerText="testo nuovo"
+      const ps= document.querySelectorAll("div p")
+      for (let i=0; i<ps.length; i++){
+      const p=ps[i]
+      p.innerText="testo nuovo"
       }
+    }
       changePcontent()
 
       /* ESERCIZIO 4
@@ -114,7 +116,7 @@
       */
 
       const changeUrls = function () {
-      const link= document.querySelectorAll("a:not(footer a)")
+      const link= document.querySelector("a:not(footer a)")
       for (let i=0; i<link.length; i++)
       link[i].innerText="https://www.google.com"
     }
@@ -133,9 +135,14 @@
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
     */
-
-      const addParagraph = function () {}
-
+      
+      const addParagraph = function () {
+     const div= document.querySelector("div")
+      const p = document.createElement("p")
+      p.innerText="paragrafo in più"
+      div.appendChild(p)
+      }
+      addParagraph()
       /* ESERCIZIO 7
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
     */
